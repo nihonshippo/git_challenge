@@ -1,0 +1,65 @@
+PS C:\Users\Erika> cd C:\Users\Erika\Desktop\git_challenge2
+PS C:\Users\Erika\Desktop\git_challenge2> git add hello_world.txt
+PS C:\Users\Erika\Desktop\git_challenge2> git commit -m "hello_world.txtを追
+加"
+[main eb38d01] hello_world.txtを追加
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello_world.txt
+PS C:\Users\Erika\Desktop\git_challenge2> git add .
+PS C:\Users\Erika\Desktop\git_challenge2> git commit -m "日本語訳を追記"
+[main 35f14a2] 日本語訳を追記
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS C:\Users\Erika\Desktop\git_challenge2> git log --oneline
+35f14a2 (HEAD -> main) 日本語訳を追記
+eb38d01 hello_world.txtを追加
+PS C:\Users\Erika\Desktop\git_challenge2> git checkout -b fix
+Switched to a new branch 'fix'
+PS C:\Users\Erika\Desktop\git_challenge2> mkdir kadai_004
+
+
+    ディレクトリ: C:\Users\Erika\Desktop\git_challenge2
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        2024/01/30     17:32                kadai_004
+
+
+PS C:\Users\Erika\Desktop\git_challenge2> git add .                     
+PS C:\Users\Erika\Desktop\git_challenge2> git mv hello_world.txt .\kadai_004
+PS C:\Users\Erika\Desktop\git_challenge2> git add .
+PS C:\Users\Erika\Desktop\git_challenge2> git commit -m "hello_world.txtをkadai_004に移動"
+[fix 19a7249] hello_world.txtをkadai_004に移動
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename hello_world.txt => kadai_004/hello_world.txt (100%)
+PS C:\Users\Erika\Desktop\git_challenge2> git checkout main
+Switched to branch 'main'
+PS C:\Users\Erika\Desktop\git_challenge2> git remote add origin https://github.com/nihonshippo/git-basic-kadai.git
+PS C:\Users\Erika\Desktop\git_challenge2> git remote -v
+origin  https://github.com/nihonshippo/git-basic-kadai.git (fetch)
+origin  https://github.com/nihonshippo/git-basic-kadai.git (push)
+PS C:\Users\Erika\Desktop\git_challenge2> git diff --staged
+PS C:\Users\Erika\Desktop\git_challenge2> git push -u origin main
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (10/10), 896 bytes | 224.00 KiB/s, done.
+Total 10 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/nihonshippo/git-basic-kadai.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+PS C:\Users\Erika\Desktop\git_challenge2> git push -u origin fix
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (2/2), 271 bytes | 271.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'fix' on GitHub by visiting:
+remote:      https://github.com/nihonshippo/git-basic-kadai/pull/new/fix     
+remote:
+To https://github.com/nihonshippo/git-basic-kadai.git
+ * [new branch]      fix -> fix
+branch 'fix' set up to track 'origin/fix'.
+PS C:\Users\Erika\Desktop\git_challenge2>
